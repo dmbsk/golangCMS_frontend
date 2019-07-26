@@ -1,0 +1,30 @@
+div.admin-panel {
+  min-height: calc(100vh - 100px);
+  margin-top: 100px;
+  padding-top: 100px;
+  height: 100%;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .new-article {
+    position: fixed;
+    z-index: 102;
+    bottom: 20px;
+    right: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 41px;
+      height: 41px;
+      background-color: black;
+      left: -12px;
+      top: -2px;
+      z-index: -1;
+    }
+  }
+}

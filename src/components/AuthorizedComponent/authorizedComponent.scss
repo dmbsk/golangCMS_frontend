@@ -1,0 +1,12 @@
+div.login {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  p, a {
+    font-size: 25px;
+  }
+}

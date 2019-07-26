@@ -1,0 +1,102 @@
+div.styled-input {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  width: 100%;
+  input[type="text"], input[type="password"] {
+    border: 1px solid black;
+    text-align: center;
+    height: 33px;
+    margin: 7px 0;
+    width: calc(100% - 2px);
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: black;
+    transition: color .4s, border .4s;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+      color: white;
+      & + label:before {
+        transform: translate(0, -50%) scale(1);
+      }
+      & + label:after {
+        transform: translate(0, -50%) scale(1);
+      }
+    }
+  }
+
+  label {
+    display: block;
+    position: relative;
+    &:before, &:after {
+      content: "";
+      width: calc(100% + 1px);
+      height: 100px;
+      position: absolute;
+      background-color: black;
+      top: 50%;
+      left: 0;
+      transform-origin: 0;
+      transform: translate(0, -50%) scale(0);
+      overflow: hidden;
+      transition: transform .4s;
+      z-index: -1;
+    }
+    &:after {
+      transform: translate(0, -50%) scale(0);
+      right: -1px;
+      transform-origin: 100% 100%;
+    }
+  }
+
+  input[type="submit"] {
+    &[disabled] {
+      text-decoration: line-through;
+      border: 2px solid
+    }
+    margin: 10px 0;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    border: 2px solid black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: color .3s .075s;
+    position: relative;
+    z-index: 0;
+    display: block;
+    overflow: hidden;
+    background-color: transparent;
+    & + label:after, & + label:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 10px;
+      width: 100%;
+      height: 49px;
+      background-color: black;
+      transform-origin: 100%;
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+    & + label:before {
+      transform-origin: 0%;
+    }
+    &:not([disabled]):hover {
+      color: white;
+      & + label:before, & + label:after {
+        transform: scaleX(1);
+      }
+      & + label:before {
+        transform-origin: 100%;
+      }
+      & + label:after {
+        transform-origin: 0%;
+      }
+    }
+  }
+}

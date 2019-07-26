@@ -1,0 +1,26 @@
+div.about {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  p {
+    font-size: 50px;
+    &:hover + span {
+      transition: opacity 1s;
+      opacity: 0.5;
+    }
+  }
+  span {
+    font-size: 120px;
+    position: absolute;
+    z-index: -1;
+    right: 25%;
+    bottom: 25%;
+    transform: rotateZ(30deg);
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}

@@ -1,0 +1,13 @@
+div.authorization-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+}

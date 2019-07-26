@@ -1,0 +1,16 @@
+div.articles-root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 185px;
+  .articles {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    @media screen and (max-width: 610px){
+      width: 100%;
+    }
+  }
+}

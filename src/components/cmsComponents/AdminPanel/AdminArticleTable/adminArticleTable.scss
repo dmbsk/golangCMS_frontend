@@ -1,0 +1,98 @@
+div.admin-table {
+  width: 100%;
+  margin-bottom: 30px;
+  div.admin-grid {
+    margin: 30px 2.5% 0px 2.5%;
+  }
+  div.grid-item {
+    margin: 0 2.5% 0 2.5%;
+  }
+  div.admin-grid, div.grid-item {
+    display: inline-grid;
+    width: 100%;
+    min-height: 130px;
+    grid-template-columns: 15% 25% 40% 4% 10% 6%;
+    grid-template-areas: "thumbnail-image header description is-public author date";
+    position: relative;
+    &:last-of-type {
+      border-bottom: 1px solid black;
+    }
+    & > div:last-of-type{
+      border-right: 1px solid black;
+    }
+    & > div {
+      border: 1px solid black;
+      border-bottom: none;
+      border-right: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      padding: 10px;
+      word-break: break-all;
+    }
+    .grid-thumbnail-image {
+      grid-area: thumbnail-image;
+      padding: 5px;
+    }
+
+    .grid-header {
+      grid-area: header;
+    }
+
+    .grid-description {
+      grid-area: description;
+    }
+
+    .grid-is-public {
+      grid-area: is-public;
+    }
+
+    &.admin-grid-title {
+      min-height: 50px;
+      .grid-is-public {
+        background-image: url('public.png');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    }
+
+    .grid-author {
+      grid-area: author;
+    }
+
+    .grid-date {
+      grid-area: date;
+      flex-direction: column;
+    }
+
+    .grid-controls {
+      position: absolute;
+      border: none;
+      right: -80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      a {
+        margin: 2px 0 2px 0;
+        text-decoration: none;
+        &:hover {
+          cursor: pointer;
+        }
+        &.grid-control-edit {
+          color: green;
+        }
+        &.grid-control-delete {
+          color: red;
+        }
+      }
+    }
+  }
+}

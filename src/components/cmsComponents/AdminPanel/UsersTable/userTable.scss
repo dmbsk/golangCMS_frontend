@@ -1,0 +1,24 @@
+div.admin-table.admin-user-table div.grid-item, div.admin-table.admin-user-table div.admin-grid-title{
+  grid-template-columns: 30% 10% 60%;
+  grid-template-areas: "username role description";
+
+
+  .grid-author-username {
+    grid-area: username;
+  }
+
+  .grid-author-role {
+    grid-area: role;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    b {
+      position: absolute;
+      top: 90px;
+    }
+  }
+
+  .grid-author-description {
+    grid-area: description;
+  }
+}

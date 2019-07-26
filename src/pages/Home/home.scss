@@ -1,0 +1,37 @@
+div.home {
+  min-height: calc(100vh - 100px);
+  margin-top: 100px;
+  padding-top: 100px;
+  height: 100%;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  div.home-we {
+    display: flex;
+    align-items: center;
+    position: relative;
+    letter-spacing: 10px;
+    & > p{
+      display: flex;
+      font-size: 150px;
+      text-transform: uppercase;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 80%;
+        top: 10%;
+        right: -20px;
+        width: 10px;
+        background-color: black;
+      }
+    }
+    div p {
+      margin: -11px 0 -11px 0;
+      font-size: 60px;
+      text-transform: uppercase;
+    }
+  }
+}

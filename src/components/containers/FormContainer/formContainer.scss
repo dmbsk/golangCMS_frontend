@@ -1,0 +1,26 @@
+div.imageCreator {
+  margin: 50px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  form#article-form{
+    max-width: 1000px;
+    label {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      textarea {
+        height: 150px;
+      }
+    }
+    div.articleCreator-images {
+      width: 100%;
+      img.articleCreator-image {
+        width: calc(75% - 40px);
+        padding: 20px;
+        &.selected-thumbnail {
+          background-color: red;
+        }
+      }
+    }
+  }
+}

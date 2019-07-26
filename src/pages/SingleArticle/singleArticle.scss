@@ -1,0 +1,113 @@
+div.article-full {
+  min-height: calc(100vh - 100px);
+  margin-top: 100px;
+  padding-top: 100px;
+  height: 100%;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  button {
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+    font-size: 25px;
+    border: 2px solid black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: color .3s .075s;
+    position: relative;
+    z-index: 0;
+    display: block;
+    overflow: hidden;
+    &:after, &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 49px;
+      background-color: black;
+      transform-origin: 100%;
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+    &:before {
+      transform-origin: 0%;
+    }
+    &:hover{
+      color: white;
+      &:before, &:after {
+        transform: scaleX(1);
+      }
+      &:before {
+        transform-origin: 100%;
+      }
+      &:after {
+        transform-origin: 0%;
+      }
+    }
+  }
+
+  .article-full-images
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin: 30px;
+      max-width: 80%;
+      width: 100%;
+    }
+  }
+
+  .article-full-text {
+    text-align: center;
+    width: 80%;
+    position: relative;
+    h1 {
+      font-size: 40px;
+      text-transform: uppercase;
+      padding-top: 30px;
+      margin-bottom: 20px;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 80px;
+        background-color: black;
+        height: 2px;
+        width: 80%;
+      }
+    }
+  }
+  div.article-date {
+    display: flex;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    text-transform: uppercase;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    color: white;
+    p:first-of-type {
+      margin-right: 20px;
+    }
+
+    &:after {
+      background-color: black;
+      content: '';
+      width: calc(150% + 45px);
+      height: 1000%;
+      right: calc(-50% - 20px);
+      bottom: -845%;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}
